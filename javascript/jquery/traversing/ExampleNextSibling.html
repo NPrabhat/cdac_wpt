@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div,span{
+            padding: 20px;
+            border: 1px solid black;
+            margin: 10px;
+        }
+    </style>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p").prevUntil().css({"border":"2px solid green"})
+        })
+    </script>
+</head>
+<body>
+
+    
+    <div class="outer">
+        <div class="div2">Div 0</div>
+        <div class="div2">Div 1</div>
+        <div class="div1">Div 2</div>
+        <p>This is para</p>
+        <div class="div3">Div 3</div>
+        <div class="div4">Div 4</div>
+        <div class="div4">Div 5</div>
+    </div>
+
+    <pre>
+        Sideward
+        <hr>
+        next()      prev()
+        nextAll()   prevAll()
+        nextUntil() prevUntil()
+
+
+        siblings()  next and prev siblings both 
+
+    </pre>
+</body>
+</html>

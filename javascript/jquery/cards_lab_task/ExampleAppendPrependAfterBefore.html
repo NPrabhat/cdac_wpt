@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnAppend").click(function(){
+                $("#tbody").append(getRow())
+            })
+            
+            $("#btnPrepend").click(function(){
+                $("#tbody").prepend(getRow())
+            })
+
+            $("#btnAfter").click(function(){
+                $("table").after(`<div class="alert alert-success">
+  <strong>Success!</strong> Indicates a successful or positive action.
+</div>`)
+            })
+            
+            $("#btnBefore").click(function(){
+                $("table").before(`<div class="alert alert-danger">
+  <strong>Success!</strong> Indicates a successful or positive action.
+</div>`)
+            })
+
+
+            function getRow(){
+                const name =$("#name").val().trim()
+                const age =$("#age").val().trim()
+                const mobile =$("#mobile").val().trim()
+
+                return `<tr>
+                            <td>${name}</td>
+                            <td>${age}</td>
+                            <td>${mobile}</td>
+                        </tr>`
+            }
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="mb-3 mt-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="age" class="form-label">Age:</label>
+                    <input type="number" class="form-control" id="age" placeholder="Enter age">
+                  </div>
+                  <div class="mb-3">
+                    <label for="Mobile" class="form-label">Mobile:</label>
+                    <input type="number" class="form-control" id="mobile" placeholder="Enter mobile">
+                  </div>
+            </div>
+            <div class="col-8">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Mobile</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+        
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-outline-success" id="btnAppend">Append</button>
+                <button type="button" class="btn btn-outline-info"    id="btnPrepend">Prepend</button>
+                
+                <button type="button" class="btn btn-outline-success" id="btnAfter">Append</button>
+                <button type="button" class="btn btn-outline-info"    id="btnBefore">Prepend</button>
+
+            </div>
+            
+        </div>
+        
+    </div>
+</body>
+</html>

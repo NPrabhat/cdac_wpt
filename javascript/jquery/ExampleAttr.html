@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#getTxt").click(function(){
+                alert($("#inputFeild").attr("value"))
+            })
+        })
+        $(document).ready(function(){
+        $("#setTxt").click(function(){
+                alert($("#inputFeild").attr("value","Helewoooo"))
+            })
+        })
+        $(document).ready(function(){
+        $("#disableTxt").click(function(){
+               if( $("#inputFeild").prop("disabled")){
+                $("#inputFeild").prop("disabled",false) //enabled
+               }
+               else{
+                $("#inputFeild").prop("disabled",true) //disabled
+               }
+            })
+        })
+        </script>
+</head>
+<body>
+        <input id="inputFeild" placeholder="Enter name" disabled="false">
+        <button id="getTxt">Get Text</button>
+        <button id="setTxt">Set Text</button>
+        <button id="disableTxt">Disable Text</button>
+</body>
+</html>

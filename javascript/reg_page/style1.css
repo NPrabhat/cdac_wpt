@@ -1,0 +1,16 @@
+table,tr,td{
+    border: 1px inset red;
+    padding: 2px;
+}
+
+table{
+    margin: 20px;
+    padding: 30px;
+}
+
+.box{
+    margin-left: 35%;
+    background-color: aquamarine;
+    width: 35vw;
+    padding: 10px 0;
+}

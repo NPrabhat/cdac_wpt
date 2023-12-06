@@ -1,0 +1,30 @@
+<pre>
+    form element (value)
+
+    non form element 1)innerHTML 2)innerText
+</pre>
+
+<script>
+    function getName()
+    {
+        var nameTxt = document.getElementById("name")
+        var name = nameTxt.value 
+
+        alert("Your name =" + name)
+    }
+
+    function setName(){
+        var nameTxt = document.getElementById("name")
+        nameTxt.value = "Elvish Bhaii"
+
+        var name = nameTxt.value 
+
+        alert("Your name =" + name)
+    }
+</script>
+
+<input id = "name" placeholder="Enter a name" size="20" value = "SUmit">
+<button onclick="getName()">Get Name</button>
+
+
+<button onclick="setName()">Set Text</button>

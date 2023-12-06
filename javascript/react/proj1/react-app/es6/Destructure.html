@@ -1,0 +1,47 @@
+<script>
+    const arr= [45,23334,23,248,9,89,12]
+    // n1=arr[0];
+    // n2=arr[1];
+    // n3=arr[2];
+    // n4=arr[3];
+    // n5=arr[4];
+    // n6=arr[5];
+    // n7=arr[6];
+
+    let [,n2,n3] = arr
+
+    // console.log(n1);
+    console.log(n2);
+    console.log(n3);
+    // console.log(n4);
+    // console.log(n5);
+    // console.log(n6);
+    // console.log(n7);
+
+    
+    
+    //name =per.name
+    
+    // let {name,age,mobile} = person
+    // let {name1,mobile1} = person //skip age
+    console.log(name) 
+    // console.log(age) 
+    // console.log(mobile) 
+
+
+    const show=({anem,age,mobile})=>{
+
+        console.log("Function Call.....................")
+        console.log(name)
+        console.log(age)
+        console.log(mobile)
+    }
+    let person ={name:"Umesh",
+                 age:23,
+                 mobile:"6467721"
+                }
+
+    let emp ={...person,name:"Manish",salar:2390979,company:"Abc pvt.ltd"}
+                console.log(person,emp);
+    show(person)
+</script>

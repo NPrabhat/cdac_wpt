@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 200px;
+            width: 400px;
+            background-color: aqua;
+        }
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        
+        $(document).ready(function(){
+            $("#btnHide").click(function(){
+                $("#box").hide()
+            })
+        })
+        $(document).ready(function(){
+            $("#btnShow").click(function(){
+                $("#box").show()
+            })
+        })
+        $(document).ready(function(){
+            $("#btnToggle").click(function(){
+                $("#box").toggle()
+            })
+        })
+    </script>
+</head>
+<body>
+    <pre>
+
+        CDN(content Delivery Network)
+    </pre>
+
+    <div id="box" class="box"></div>
+    <button id="btnHide">Hidden</button>
+    <button id="btnShow">Show</button>
+    <button id="btnToggle">Toggle</button>
+
+</body>
+</html>

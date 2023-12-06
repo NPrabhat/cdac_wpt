@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: yellow;
+        }
+        #vid{
+            margin-top: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        #vid2{
+            margin-top: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        select{
+            width: 100px;
+        }
+
+        button{
+            width: 100px;
+        }
+
+        #div1{
+            height: 400px;
+            width: 350px;
+            background-color: brown;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            object-fit: cover;
+        }
+        #div2{
+            height: 400px;
+            width: 350px;
+            background-color: brown;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            object-fit: cover;
+        }
+        #div3{
+            height: 400px;
+            width: 350px;
+            background-color: brown;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            object-fit: cover;
+        }
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnApply").click(function(){
+                var getDiv = $("#sel1").val()
+                var getCard = $("#sel2").val(); 
+                
+                if(getDiv == "div1" && getCard=="king"){
+                    $("#img1").attr("src","king.jpg")
+                }
+                if(getDiv == "div1" && getCard=="queen"){
+                    $("#img1").attr("src","queen.jpg")
+                }
+                if(getDiv == "div1" && getCard=="jack"){
+                    $("#img1").attr("src","jack.jpg")
+                }
+
+                if(getDiv == "div2" && getCard=="king"){
+                    $("#img2").attr("src","king.jpg")
+                }
+                if(getDiv == "div2" && getCard=="queen"){
+                    $("#img2").attr("src","queen.jpg")
+                }
+                if(getDiv == "div2" && getCard=="jack"){
+                    $("#img2").attr("src","jack.jpg")
+                }
+
+                if(getDiv == "div3" && getCard=="king"){
+                    $("#img3").attr("src","king.jpg")
+                }
+                if(getDiv == "div3" && getCard=="queen"){
+                    $("#img3").attr("src","queen.jpg")
+                }
+                if(getDiv == "div3" && getCard=="jack"){
+                    $("#img3").attr("src","jack.jpg")
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="vid2">
+        <select id="sel1">
+            <option value="div1">div1</option>
+            <option value="div2">div2</option>
+            <option value="div3">div3</option>
+        </select>
+        <select id="sel2">
+            <option value="king">King</option>
+            <option value="queen">Queen</option>
+            <option value="jack">Jack</option>
+        </select>
+    
+        <button id="btnApply">Apply</button>
+    </div>
+    <div id="vid">
+        <div id="div1">
+            <img id="img1" width="250" height="250" alt="">
+        </div>
+        <div id="div2">
+            <img id="img2" width="250" height="250" alt="">
+        </div>
+        <div id="div3">
+            <img id="img3" width="250" height="250" alt="">
+        </div>
+    
+    </div>
+    
+</body>
+</html>

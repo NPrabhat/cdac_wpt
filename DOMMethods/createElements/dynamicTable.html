@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function addListItem(){
+            let table = document.querySelector("#tab")
+            // prompt("Hellllooo")
+            let row = table.insertRow(-1)
+            let cell1 = row.insertCell(0)
+            let cell2 = row.insertCell(1)
+
+
+            cell1.innerHTML = window.prompt("")
+            cell2.innerHTML = window.prompt()
+
+
+            // let li = document.createElement("li")
+            // let text=document.createTextNode("World")
+            // li.appendChild(text)
+            // list.appendChild(li);
+
+            // let list = document.querySelector("#list").innerHTML+="<li>World</li>"
+        }
+    </script>
+</head>
+<body> 
+    
+    <button onclick="addListItem()">Add function</button>
+    
+    
+    <table id="tab"> 
+            
+        <tr>
+            <th>gubub</th>
+            <th>Name</th>
+        </tr>
+    <tr>
+        <td>yhy</td>
+        <td>uhbu</td>
+    </tr>
+</table>
+</body>
+</html>

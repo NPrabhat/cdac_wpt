@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head>
+<body>
+    <form method="get" onsubmit="saveProduct(event)" action="">
+        <table>
+            <tr>
+                <th>
+                    <input type="number" name="" id="pid" placeholder="Product ID">
+                </th>
+            </tr>    
+            <tr>
+                <th>
+                    <input type="text" name="" id="pname" placeholder="Product Name">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="number" name="" id="pprice" placeholder="Product Price">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="text" name="" id="pdetails" placeholder="Product Details">
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="submit" value="Save Product">
+                </th>
+            </tr>            
+        </table>
+        <div class="prod-details">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>product #</th>    
+                        <th>product id</th>    
+                        <th>product name</th>    
+                        <th>product Price</th>    
+                        <th>product details</th>    
+                        <th>actions</th>    
+                             
+                    </tr>
+                </thead>
+
+                <tbody id="prod-details"></tbody>
+                
+                <td><input type="" name="" id=""></td>
+
+            </table>    
+        </div>
+    </form>
+
+
+    <script>
+
+        function generateTable(){
+            const prodDetails = document.getElementById("prod-details")
+            prodDetails.innerHTML=""
+            const prodJSON = localStorage.getItem("product")
+            const arrProduct = JSON.parse(prodJSON)
+
+            arrProduct.forEach(function(e,i){
+                const tr = `
+                    <tr>
+                        <td>${i+1}</td>
+                        <td>${e.pid}</td>
+                        <td>${e.pname}</td>
+                        <td>${e.pprice}</td>
+                        <td>${e.pdetails}</td>
+                    </tr>` 
+
+                prodDetails.innerHTML +=tr
+            })
+        }
+
+        generateTable()
+
+        function saveProduct(event){
+            event.preventDefault();
+
+
+            let pid = document.getElementById("pid").value
+            let pname = document.getElementById("pname").value
+            let pprice = document.getElementById("pprice").value
+            let pdetails = document.getElementById("pdetails").value
+
+            const product = {pid,pname,pprice,pdetails}
+
+            let arrProduct =[]
+            let prodJSON = localStorage.getItem("product")
+
+            if(prodJSON!=null){
+                arrProduct = JSON.parse(prodJSON)
+            }
+            else{
+                localStorage.setItem("product",JSON.stringify([]))
+                prodJSON = localStorage.getItem("product")
+                arrProduct = JSON.parse(prodJSON)
+            }
+            
+            arrProduct.push(product)
+
+            localStorage.setItem("product",JSON.stringify(arrProduct))
+            
+            generateTable()
+        }
+</script>
+</body>
+</html>

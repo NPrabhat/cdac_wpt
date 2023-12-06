@@ -1,0 +1,140 @@
+<!-- NVDA is an application for speaking for websites -->
+<!-- JAWS is also -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src=""></script>
+    <script>
+        var n=[]
+        function register(event){
+            event.preventDefault();
+            alert("Hello")
+
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let email = document.getElementById("email").value;
+            let passsword = document.getElementById("password").value;
+            let cpasssword = document.getElementById("cpassword").value;
+            let male = document.getElementById("male");
+            let female = document.getElementById("female");
+            let gender=""
+            if(male.checked == true){
+                gender = male.value;
+            }
+            else if(female.checked == true){
+                gender = female.value;
+            }
+
+            let city = document.getElementById("city").value;
+            let mobile = document.getElementById("mobile").value;
+            let address = document.getElementById("address").value;
+            let agree = document.getElementById("agree").checked;
+
+
+            const person = {
+                name,age,email,passsword,gender,city,mobile,address
+            }
+
+            if(passsword==cpasssword && agree==true){
+                localStorage.setItem("person",JSON.stringify(person));
+            }
+
+            n.push(person);
+            console.log(n)
+
+
+        }
+    </script>
+</head>
+<body>
+    <table class="box">
+        <form  method="get" onsubmit="register(event)" action="welcome.html" autocomplete="off'">
+        <thead>
+            <tr>
+                <th colspan="2">Register Here</th>
+            </tr>
+        </thead>
+
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="name" id="name"></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><input type="number" name="age" id="age" min="1" max="150"></td>
+        </tr>
+        <tr>
+            <td>Mobile No.</td>
+            <td><input type="tel" name="mobile" id="mobile"></td>
+        </tr>
+        <tr>
+            <td>Email-id</td>
+            <td><input type="email" name="email" id="email"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="password" id="password"></td>
+        </tr>
+        <tr>
+            <td>Confirm Password</td>
+            <td><input type="password" name="cpassword" id="cpassword"></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td> Male: <input type="radio" name="gender" id="male" value="male">
+                 Female:<input type="radio" name="gender" id="female" value="female">
+            </td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td> 
+                <select name="city" id="city">
+                    <option value="">Select City</option>
+                    <option value="ngp" selected>Nagpur</option>
+                    <option value="pune">Pune</option>
+                    <option value="nsk">Nashik</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>
+                <textarea name="address" id="address" cols="30" rows="10" required></textarea>
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                I agree: <input type="checkbox" value="iagree" id="agree">
+            </th>
+            <th>
+
+            </th>
+        </tr>
+        <th>
+            <td>
+                <input type="submit" value="Register">
+                <button type="reset">Clear</button>
+            </td>
+        </th>
+
+        <tfoot>
+            <th colspan="2">Last Submit Time: 10:00 PM</th>
+        </tfoot>
+    </form>
+    </table>
+</body>
+</html>
+
+<!-- JSON => parse(), stringify()
+JSON.parse() => json to array-object
+JSON.stringify() => array-object => json
+
+localStorage setItem(key,value)
+             getItem(key) --It will return value
+             removeItem(key) --It will remove value
+             clear() --It will clear all local storage data  -->

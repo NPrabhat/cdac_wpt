@@ -1,0 +1,30 @@
+<script>
+    function goback(){
+        history.back();
+    }
+
+    function goforward(){
+            history.forward()
+    }
+
+    function goToPage(){
+        const page= parseInt(window.prompt("Enter page history no(-ve 0 +ve)")) 
+        history.go(page); //page is a number
+    }
+
+    function getLength(){
+        alert(history.length);
+    }
+
+    // goback();
+    goforward();
+    // goToPage(-2)
+    // goToPage(2)
+    // goToPage(0)
+
+    getLength();
+</script>
+
+<button onclick="goforward()">Forward</button>
+<button onclick="goback()">Back</button>
+<button onclick="goToPage()">Go to page</button>

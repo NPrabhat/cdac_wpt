@@ -1,0 +1,16 @@
+<script>
+
+    function success(pos){
+        const crd = pos.coords;
+        console.log(`Latitude: ${crd.latitude}`);
+        console.log(`Longitude: ${crd.longitude}`);
+    }
+
+    console.log(window.navigator.cookieEnabled)
+    console.log(window.navigator.onLine)
+    console.log(window.navigator.platform)
+    console.log(window.navigator.language)
+    console.log(window.navigator.geolocation.getCurrentPosition(success))
+
+
+</script>

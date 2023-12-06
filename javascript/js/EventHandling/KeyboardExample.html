@@ -1,0 +1,17 @@
+<script>
+    function keyUp(inputBox){
+        console.log(inputBox.value)
+        // alert("Key up")
+    }
+    
+    function keyDown(){
+        alert("Key down")
+    }
+    function keyPress(inputBox){
+        console.log(inputBox.value)
+        // alert("Key press")
+    }
+
+</script>
+
+<input onkeypress="keyPress(this)" onkeydown="keyDown()" > <!--On following order-->

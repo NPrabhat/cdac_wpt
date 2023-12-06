@@ -1,0 +1,46 @@
+<pre>
+    ...array/object
+</pre>
+
+<script>
+    let arr = [45,23334,23,248,9,89,12]
+    let arr1=[...arr,87,15]
+    console.log("arr="+arr)
+    console.log("arr1="+arr1)
+
+    // arr.forEach((e)=>{
+    //     arr1.push(e)
+    // })
+
+    let person ={name:"Umesh",
+                 age:23,
+                 mobile:"6467721"
+                }
+
+    let emp = {...person,salary:2390979,company:"Abc pvt. ltd."}
+
+    console.log(person)
+    console.log(emp)
+
+    function show(newPerson){
+        newPerson["address"]="Nagpur"
+        console.log(newPerson)
+    }
+
+    let person1 ={name:"Umesh",
+                 age:23,
+                 mobile:"6467721"
+                }
+    show({...person1})
+    // console.log(Person1)
+
+
+    function showArr(newArr){
+        newArr.push(44)
+        console.log(newArr)
+    }
+
+    arr= [45,23334,23,248,9,89,12]
+    console.log(arr)
+    showArr([...arr])
+</script>

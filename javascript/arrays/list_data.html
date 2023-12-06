@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        var n=[]
+        function register(event){
+            event.preventDefault();
+            alert("Added");
+
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let mobile = document.getElementById("mobile").value;
+
+            const person = {name,age,mobile}
+
+            n.push(person)
+
+            localStorage.setItem("n",JSON.stringify(person))
+
+            console.log(n) 
+
+        }
+    </script>
+</head>
+<body>
+    <table class="box">
+        <form method="get" onsubmit="register(event)" action="">
+            <thead>
+                <tr>
+                    <th colspan="2">Register Here</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><input type="number" name="age" id="age" min="1" max="150"></td>
+            </tr>
+            <tr>
+                <td>Mobile No.</td>
+                <td><input type="tel" name="mobile" id="mobile"></td>
+            </tr>
+            <th>
+                <td>
+                    <input type="submit" value="Register">
+                    <button type="reset">Clear</button>
+                </td>
+            </th>
+        </form>
+    </table>
+    
+</body>
+</html>
