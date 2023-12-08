@@ -6,6 +6,13 @@ import { ExampleUseEffect } from "./ExampleUseEffect";
 import { ExampleUseRef } from "./ExampleUseRef";
 import "./main.css"
 import { ExampleModuledCss } from "./ExampleModuledCss";
+import { Component1 } from "./UseContextExample/Component1";
+import { Component1With } from "./UseContextExample/WithUseContext/Component1With";
+import { ChildComp } from "./UseMemoExample/ChildComp";
+import { ExampleUseMemo } from "./UseMemoExample/ExampleUseMemo";
+import { TableComponent } from "./Examples/TableComponent";
+import { ChangeColorExample } from "./Examples/ChangeColorExample";
+import { ExampleMemo } from "./Examples/ExampleMemo";
 
 export function Main(){
     
@@ -34,15 +41,24 @@ export function Main(){
 
     return(
         <div>
-            <div>
+            {/* <div>
                 Hello this is a <span className="text-decor">React Code</span>
-            </div>
+            </div> */}
             {/* <Header person={person}  showDetails={showDetails} names={names} />
             <Content printName={printName}/>
             <Footer/> */}
             {/* <ExampleUseEffect /> */}
             {/* <ExampleUseRef/> */}
-            <ExampleModuledCss/>
+            {/* <ExampleModuledCss/> */}
+
+            {/* <Component1With/> */}
+
+
+            {/* <ExampleUseMemo /> */}
+            {/* <TableComponent/> */}
+
+            {/* <ChangeColorExample/> */}
+            <ExampleMemo/>
         </div>
     );
 }
